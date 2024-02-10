@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:inciguesser_game/ui/play/play_viewmodel.dart';
+import 'package:inciguesser_game/ui/play/widgets/play_page_app_bar.dart';
+import 'package:inciguesser_game/ui/play/widgets/play_page_emoji_row.dart';
 import 'package:inciguesser_game/ui/play/widgets/play_page_fab.dart';
+import 'package:inciguesser_game/ui/play/widgets/play_page_text_constants.dart';
 
 class PlayView extends StatefulWidget {
   const PlayView({super.key});
@@ -17,24 +20,16 @@ class _PlayViewState extends State<PlayView> {
   Widget build(BuildContext context) {
     final questionSet = pickRandom(EMOJI_SET);
     return Scaffold(
-      appBar: AppBar(title: const Text("Guess the incident!"),),
+      appBar: playPageAppBar(leadTitle),
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'Guess the incident based on this set of emoji:',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            bodyTextRow(bodyText),
             const SizedBox(height: 40),
-            RichText(
-              text: TextSpan(
-                text: questionSet,
-                style: const TextStyle(fontFamily: 'OpenMoji', fontSize: 40.0),
-              )
-            )
+            emojiRow(questionSet)
           ]
         ),
       ),
