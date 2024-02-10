@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:inciguesser_game/ui/play/play_viewmodel.dart';
+import 'package:inciguesser_game/ui/play/widgets/play_page_fab.dart';
 
 class PlayView extends StatefulWidget {
   const PlayView({super.key});
@@ -9,10 +10,12 @@ class PlayView extends StatefulWidget {
 }
 
 class _PlayViewState extends State<PlayView> {
-  final boxText = lorem(paragraphs: 1, words: 50);
-
+  void _refreshPage() {
+    setState(() {});
+  }
   @override
   Widget build(BuildContext context) {
+    final questionSet = pickRandom(EMOJI_SET);
     return Scaffold(
       appBar: AppBar(title: const Text("Guess the incident!"),),
       body: Container(
@@ -27,14 +30,15 @@ class _PlayViewState extends State<PlayView> {
             ),
             const SizedBox(height: 40),
             RichText(
-              text: const TextSpan(
-                text: "🇨🇺 🚀 ☢️ 🤯",
-                style: TextStyle(fontFamily: 'OpenMoji', fontSize: 40.0),
+              text: TextSpan(
+                text: questionSet,
+                style: const TextStyle(fontFamily: 'OpenMoji', fontSize: 40.0),
               )
             )
           ]
         ),
-      )
+      ),
+      floatingActionButton: playPageFAB(_refreshPage),
     );
   }
 }
