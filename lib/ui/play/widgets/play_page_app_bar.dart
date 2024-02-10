@@ -5,7 +5,7 @@ PreferredSizeWidget playPageAppBar(String title) {
     title: Text(title),
     centerTitle: true,
     titleTextStyle: const TextStyle(
-      fontSize: 40
+      fontSize: 30
     ),
   );
 }
