@@ -15,12 +15,26 @@ class _PlayViewState extends State<PlayView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Guess the incident!"),),
-      body: Center(
-        child: Text(
-            boxText,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Guess the incident based on this set of emoji:',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 40),
+            RichText(
+              text: const TextSpan(
+                text: "🇨🇺 🚀 ☢️ 🤯",
+                style: TextStyle(fontFamily: 'OpenMoji', fontSize: 40.0),
+              )
+            )
+          ]
+        ),
+      )
     );
   }
 }
