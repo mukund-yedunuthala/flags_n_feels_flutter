@@ -8,7 +8,7 @@ import 'package:inciguesser_game/ui/imprint/imprint_view.dart';
 import 'package:inciguesser_game/ui/play/play_view.dart';
 import 'package:inciguesser_game/ui/privacy-policy/privacy_view.dart';
 Future<void> main() async{
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: "keys.env");
   runApp(MyApp());
 }
 
