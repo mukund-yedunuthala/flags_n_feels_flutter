@@ -4,7 +4,7 @@ import 'package:flutter_lorem/flutter_lorem.dart';
 Widget homeLeadTitleText(BuildContext context) {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 10),
-    child:Text(
+    child: const Text(
       "Flags & Feels!",
       style: TextStyle(
         fontSize: 50,

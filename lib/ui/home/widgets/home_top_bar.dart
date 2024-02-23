@@ -23,8 +23,8 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
 }
 
 _launchSource() async {
-  final Uri _source_uri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/flags_n_feels_flutter");
-  if (!await launchUrl(_source_uri)) {
-    throw Exception('Could not launch $_source_uri');
+  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/flags_n_feels_flutter");
+  if (!await launchUrl(sourceUri)) {
+    throw Exception('Could not launch $sourceUri');
   }
 }

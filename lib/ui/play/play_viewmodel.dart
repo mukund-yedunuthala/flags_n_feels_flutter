@@ -1,6 +1,17 @@
 import 'dart:math';
 import 'package:appwrite/appwrite.dart';
-final EMOJI_SET = ["🇨🇺 🚀 ☢️ 🤯", "🌐 🤝 🇺🇳 🏛️"];
+final emojiSet = [
+  "🇨🇺 🚀 ☢️ 🤯", 
+  "🌐 🤝 🇺🇳 🏛️",
+  "🌕 🚀 👨‍🚀 🌑",
+  "🧱 🇩🇪 🔨 🚧"
+];
+final answersSet = [
+  "Cuban Missile Crisis",
+  "Founding of the United Nations",
+  "Moon landing",
+  "Fall of the Berlin Wall"
+];
 Future<(dynamic, dynamic)> getDataFromAppWrite() async {
   Client client = Client();
   client
@@ -21,8 +32,15 @@ Future<(dynamic, dynamic)> getDataFromAppWrite() async {
   return (emojis, incidents);
 }
 
-String pickRandom(final dynamic emojis) {
+List<dynamic> pickRandomIndices(final dynamic emojis) {
   Random rand = Random();
   int randIdx = rand.nextInt(emojis.length);
-  return emojis[randIdx];
+  Set<int> indicesSet = {};
+  indicesSet.add(randIdx);
+  while (indicesSet.length < 4) {
+    indicesSet.add(rand.nextInt(emojis.length));
+  }
+  List<int> indices = indicesSet.toList();
+  indices.shuffle();
+  return [randIdx, indices];
 }

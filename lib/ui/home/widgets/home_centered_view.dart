@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:inciguesser_game/ui/home/widgets/home_call_for_action.dart';
 import 'package:inciguesser_game/ui/home/widgets/home_text_wall.dart';
 
