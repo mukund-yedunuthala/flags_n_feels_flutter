@@ -3,8 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:inciguesser_game/ui/about/about_view.dart';
 import 'package:inciguesser_game/ui/home/home_view.dart';
 import 'package:inciguesser_game/ui/play/play_view.dart';
-
-void main() {
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+Future<void> main() async{
+  await dotenv.load(fileName: ".env");
   runApp(MyApp());
 }
 

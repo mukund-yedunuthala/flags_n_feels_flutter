@@ -15,35 +15,58 @@ class PlayView extends StatefulWidget {
 }
 
 class _PlayViewState extends State<PlayView> {
+  late Future<List> result;
+  @override
+  void initState() {
+    super.initState();
+    result = getDataFromAppWrite();
+  } 
   void _refreshPage() {
     setState(() {});
   }
   @override
   Widget build(BuildContext context) {
-    final questionSetIdx = pickRandomIndices(emojiSet);
-    final questionSet = emojiSet[questionSetIdx[0]];
-    final answerString = answersSet[questionSetIdx[0]];
-    final options = questionSetIdx[1].map((index) 
-                        => answersSet[index]).toList();
-    List<Widget> children = [
-      bodyTextRow(bodyText),
-      const SizedBox(height: 40),
-      emojiRow(questionSet),
-      const SizedBox(height: 40),
-    ];
-    for (var i = 0; i < options.length; i++) {
-      children.add(optionButton(options[i], answerString, _refreshPage));
-      children.add(const SizedBox(height: 20));
-    }
     return Scaffold(
       appBar: playPageAppBar(leadTitle),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: children
-        ),
+      body: FutureBuilder(
+        future: result,
+        builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasError) {
+            return Center(
+              child: Text('Error: ${snapshot.error}'),
+            );
+          } else {
+            final emojiSet = snapshot.data?[0];
+            final answersSet = snapshot.data?[1];
+            final questionSetIdx = pickRandomIndices(emojiSet);
+            final questionSet = emojiSet[questionSetIdx[0]];
+            final answerString = answersSet[questionSetIdx[0]];
+            final options = questionSetIdx[1].map((index) 
+                        => answersSet[index]).toList();
+            List<Widget> children = [
+              bodyTextRow(bodyText),
+              const SizedBox(height: 40),
+              emojiRow(questionSet),
+              const SizedBox(height: 40),
+            ];
+            for (var i = 0; i < options.length; i++) {
+                children.add(optionButton(options[i], answerString, _refreshPage));
+                children.add(const SizedBox(height: 20));
+            }
+            return Container(
+              alignment: Alignment.center,
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: children
+            ),
+          );
+          }
+        }
       ),
       floatingActionButton: playPageFAB(_refreshPage),
     );

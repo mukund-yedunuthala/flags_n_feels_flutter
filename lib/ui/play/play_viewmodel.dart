@@ -1,36 +1,37 @@
 import 'dart:math';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:appwrite/appwrite.dart';
-final emojiSet = [
-  "🇨🇺 🚀 ☢️ 🤯", 
-  "🌐 🤝 🇺🇳 🏛️",
-  "🌕 🚀 👨‍🚀 🌑",
-  "🧱 🇩🇪 🔨 🚧"
-];
-final answersSet = [
-  "Cuban Missile Crisis",
-  "Founding of the United Nations",
-  "Moon landing",
-  "Fall of the Berlin Wall"
-];
-Future<(dynamic, dynamic)> getDataFromAppWrite() async {
+// final emojiSet = [
+//   "🇨🇺 🚀 ☢️ 🤯", 
+//   "🌐 🤝 🇺🇳 🏛️",
+//   "🌕 🚀 👨‍🚀 🌑",
+//   "🧱 🇩🇪 🔨 🚧"
+// ];
+// final answersSet = [
+//   "Cuban Missile Crisis",
+//   "Founding of the United Nations",
+//   "Moon landing",
+//   "Fall of the Berlin Wall"
+// ];
+Future<List<dynamic>> getDataFromAppWrite() async {
   Client client = Client();
   client
     .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('')
+    .setProject(dotenv.get('PROJECT_KEY'))
     .setSelfSigned(status: true);
   final databases = Databases(client);
-  const String databaseId = "";
-  const collectionId = "";
-
-  // const documentId = "";
+  final databaseId = dotenv.get('DATABASE_ID');
+  final collectionId = dotenv.get('COLLECTION_ID');
   // Access the emoji and incident from the response
   final documents = await databases.listDocuments(
       databaseId: databaseId, collectionId: collectionId);
   final document = documents.documents[0];
   final emojis = document.data['emoji'];
   final incidents = document.data['incident'];
-  return (emojis, incidents);
+  return [emojis, incidents];
 }
+
+
 
 List<dynamic> pickRandomIndices(final dynamic emojis) {
   Random rand = Random();
