@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Text aboutBodyText(BuildContext context) {
-  final boxText = lorem(paragraphs: 1, words: 50);
   return Text(
-      boxText,
+      AppLocalizations.of(context)!.aboutPageText,
       style: Theme.of(context).textTheme.bodyLarge,
   );
 }

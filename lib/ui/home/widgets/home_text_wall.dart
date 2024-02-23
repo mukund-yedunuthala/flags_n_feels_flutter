@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Widget homeLeadTitleText(BuildContext context) {
   return Container(
@@ -15,9 +15,8 @@ Widget homeLeadTitleText(BuildContext context) {
 }
 
 Text homeBodyText(BuildContext context) {
-  final boxText = lorem(paragraphs: 1, words: 50);
   return Text(
-      boxText,
+      AppLocalizations.of(context)!.homePageText,
       style: Theme.of(context).textTheme.bodyLarge,
   );
 }

@@ -1,18 +1,7 @@
 import 'dart:math';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:appwrite/appwrite.dart';
-// final emojiSet = [
-//   "🇨🇺 🚀 ☢️ 🤯", 
-//   "🌐 🤝 🇺🇳 🏛️",
-//   "🌕 🚀 👨‍🚀 🌑",
-//   "🧱 🇩🇪 🔨 🚧"
-// ];
-// final answersSet = [
-//   "Cuban Missile Crisis",
-//   "Founding of the United Nations",
-//   "Moon landing",
-//   "Fall of the Berlin Wall"
-// ];
+
 Future<List<dynamic>> getDataFromAppWrite() async {
   Client client = Client();
   client

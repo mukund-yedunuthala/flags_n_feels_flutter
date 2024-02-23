@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:inciguesser_game/ui/home/widgets/home_footer.dart';
 import 'package:inciguesser_game/ui/play/play_viewmodel.dart';
 import 'package:inciguesser_game/ui/play/widgets/play_page_app_bar.dart';
@@ -28,7 +29,7 @@ class _PlayViewState extends State<PlayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: playPageAppBar(leadTitle),
+      appBar: playPageAppBar(AppLocalizations.of(context)!.playLeadTitle),
       body: FutureBuilder(
         future: result,
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
@@ -49,7 +50,7 @@ class _PlayViewState extends State<PlayView> {
             final options = questionSetIdx[1].map((index) 
                         => answersSet[index]).toList();
             List<Widget> children = [
-              bodyTextRow(bodyText),
+              bodyTextRow(AppLocalizations.of(context)!.playBodyText),
               const SizedBox(height: 40),
               emojiRow(questionSet),
               const SizedBox(height: 40),
