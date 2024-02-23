@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inciguesser_game/ui/home/widgets/home_footer.dart';
 import 'package:inciguesser_game/ui/play/play_viewmodel.dart';
 import 'package:inciguesser_game/ui/play/widgets/play_page_app_bar.dart';
 import 'package:inciguesser_game/ui/play/widgets/play_page_emoji_row.dart';
@@ -69,6 +70,7 @@ class _PlayViewState extends State<PlayView> {
         }
       ),
       floatingActionButton: playPageFAB(_refreshPage),
+      bottomNavigationBar: homeFooter(),
     );
   }
 }
