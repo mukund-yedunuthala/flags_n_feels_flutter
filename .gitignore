@@ -5,6 +5,7 @@ linux/
 macos/
 windows/
 
+*.env
 # Miscellaneous
 *.class
 *.log
