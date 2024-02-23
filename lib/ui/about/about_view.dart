@@ -18,7 +18,7 @@ class _AboutViewState extends State<AboutViewState> {
       body: const Center(
         child: AboutCenteredView()
       ),
-      bottomNavigationBar: homeFooter(),
+      bottomNavigationBar: homeFooter(context),
     );
   }
 }

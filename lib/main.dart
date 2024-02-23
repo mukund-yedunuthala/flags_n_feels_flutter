@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:inciguesser_game/ui/about/about_view.dart';
 import 'package:inciguesser_game/ui/home/home_view.dart';
+import 'package:inciguesser_game/ui/imprint/imprint_view.dart';
 import 'package:inciguesser_game/ui/play/play_view.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:inciguesser_game/ui/privacy-policy/privacy_view.dart';
 Future<void> main() async{
   await dotenv.load(fileName: ".env");
   runApp(MyApp());
@@ -27,6 +29,16 @@ class MyApp extends StatelessWidget {
         name: "about",
         path: "/about",
         builder: (context, state) => const AboutViewState(),
+      ),
+      GoRoute(
+        name: "imprint",
+        path: "/imprint",
+        builder: (context, state) => const ImprintView(),
+      ),
+      GoRoute(
+        name: "privacy-policy",
+        path: "/privacy-policy",
+        builder: (context, state) => const PrivacyPolicyView(),
       )
     ]
   );

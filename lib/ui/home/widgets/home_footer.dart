@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-Widget homeFooter() {
+Widget homeFooter(BuildContext context) {
   List<Widget> row_children = [
     TextButton(
-      onPressed: () => {}, 
+      onPressed: () => context.go("/imprint"), 
       child: Text("Imprint")
     ),
     TextButton(
-      onPressed: () => {}, 
+      onPressed: () => context.go("/privacy-policy"), 
       child: Text("Privacy Policy")
     ),
     TextButton(
-      onPressed: () => {}, 
+      onPressed: _launchLicense, 
       child: Text("License")
     ),
   ];
@@ -34,4 +36,11 @@ Widget homeFooter() {
       ],
     )
   );
+}
+
+_launchLicense() async {
+  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/flags_n_feels_flutter/src/branch/main/LICENSE");
+  if (!await launchUrl(sourceUri)) {
+    throw Exception('Could not launch $sourceUri');
+  }
 }

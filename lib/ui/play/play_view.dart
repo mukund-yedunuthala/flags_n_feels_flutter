@@ -70,7 +70,7 @@ class _PlayViewState extends State<PlayView> {
         }
       ),
       floatingActionButton: playPageFAB(_refreshPage),
-      bottomNavigationBar: homeFooter(),
+      bottomNavigationBar: homeFooter(context),
     );
   }
 }

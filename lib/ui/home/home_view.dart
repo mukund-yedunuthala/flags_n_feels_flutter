@@ -20,7 +20,7 @@ class _HomePageStateState extends State<HomePageState> {
       body: const Center(
         child: HomeCenteredView(),
       ), 
-      bottomNavigationBar: homeFooter(),
+      bottomNavigationBar: homeFooter(context),
     );
   }
 }

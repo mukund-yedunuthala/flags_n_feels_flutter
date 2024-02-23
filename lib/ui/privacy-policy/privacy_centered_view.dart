@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:inciguesser_game/ui/about/widgets/about_body_text.dart';
+import 'package:flutter_lorem/flutter_lorem.dart';
 
-class AboutCenteredView extends StatelessWidget {
-  const AboutCenteredView({super.key});
+class PrivacyPolicyCenteredView extends StatelessWidget {
+  const PrivacyPolicyCenteredView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +14,17 @@ class AboutCenteredView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 250),
-          aboutBodyText(context),
+          policyBodyText(context),
         ],
       ),
     );
   }
+}
+
+Text policyBodyText(BuildContext context) {
+  final boxText = lorem(paragraphs: 1, words: 50);
+  return Text(
+      boxText,
+      style: Theme.of(context).textTheme.bodyLarge,
+  );
 }
