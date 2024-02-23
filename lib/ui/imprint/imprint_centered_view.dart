@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ImprintCenteredView extends StatelessWidget {
   const ImprintCenteredView({super.key});
@@ -22,9 +22,8 @@ class ImprintCenteredView extends StatelessWidget {
 }
 
 Text imprintBodyText(BuildContext context) {
-  final boxText = lorem(paragraphs: 1, words: 50);
   return Text(
-      boxText,
+      AppLocalizations.of(context)!.imprint,
       style: Theme.of(context).textTheme.bodyLarge,
   );
 }

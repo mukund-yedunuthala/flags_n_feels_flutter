@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:inciguesser_game/ui/about/about_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:inciguesser_game/ui/home/home_view.dart';
 import 'package:inciguesser_game/ui/imprint/imprint_view.dart';
 import 'package:inciguesser_game/ui/play/play_view.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:inciguesser_game/ui/privacy-policy/privacy_view.dart';
 Future<void> main() async{
   await dotenv.load(fileName: ".env");
@@ -54,6 +55,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routerConfig: _router,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }
