@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 FilledButton homeCallForAction(BuildContext context) {
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
@@ -12,9 +13,9 @@ FilledButton homeCallForAction(BuildContext context) {
   return FilledButton(
     style: raisedButtonStyle,
     onPressed: () => context.go("/play"),
-    child: const Text(
-      "Let's play!", 
-      style: TextStyle(fontSize: 30),
+    child: Text(
+      AppLocalizations.of(context)!.homeCallForAction, 
+      style: const TextStyle(fontSize: 30),
     ),
   );
 }

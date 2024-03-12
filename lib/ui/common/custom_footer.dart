@@ -4,19 +4,19 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
-Widget homeFooter(BuildContext context) {
+Widget customFooter(BuildContext context) {
   List<Widget> rowChildren = [
     TextButton(
       onPressed: () => context.go("/imprint"), 
-      child: Text(AppLocalizations.of(context)!.imprint)
+      child: Text(AppLocalizations.of(context)!.footerImprint)
     ),
     TextButton(
       onPressed: () => context.go("/privacy-policy"), 
-      child: Text("Privacy Policy")
+      child: Text(AppLocalizations.of(context)!.footerPrivacyPolicy)
     ),
     TextButton(
       onPressed: _launchLicense, 
-      child: Text("License")
+      child: Text(AppLocalizations.of(context)!.footerLicense)
     ),
   ];
   return Container(
@@ -32,9 +32,7 @@ Widget homeFooter(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: rowChildren,
         ),
-        const Text(
-          "Copyright © 2024 Venkata Mukund Kashyap Yedunuthala"
-        )
+        Text(AppLocalizations.of(context)!.footerCopyright)
       ],
     )
   );
