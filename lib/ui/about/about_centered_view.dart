@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inciguesser_game/ui/about/widgets/about_body_text.dart';
+import 'package:guess_the_event_emoji_edition/ui/about/widgets/about_body_text.dart';
 
 class AboutCenteredView extends StatelessWidget {
   const AboutCenteredView({super.key});

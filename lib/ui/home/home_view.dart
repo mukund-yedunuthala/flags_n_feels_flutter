@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_centered_view.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_footer.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_top_bar.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/widgets/home_centered_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/widgets/home_footer.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/widgets/home_top_bar.dart';
 
 class HomePageState extends StatefulWidget {
   final String title;

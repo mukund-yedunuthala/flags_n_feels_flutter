@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_call_for_action.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_text_wall.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/widgets/home_call_for_action.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/widgets/home_text_wall.dart';
 
 class HomeCenteredView extends StatelessWidget {
   const HomeCenteredView({super.key});

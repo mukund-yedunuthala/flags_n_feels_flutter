@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:inciguesser_game/ui/common/custom_app_bar.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_footer.dart';
-import 'package:inciguesser_game/ui/imprint/imprint_centered_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/common/custom_app_bar.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/widgets/home_footer.dart';
+import 'package:guess_the_event_emoji_edition/ui/imprint/imprint_centered_view.dart';
 
 class ImprintView extends StatelessWidget {
   const ImprintView({super.key});
