@@ -29,7 +29,7 @@ class _PlayViewState extends State<PlayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: playPageAppBar(AppLocalizations.of(context)!.playLeadTitle),
+      appBar: playPageAppBar(context, AppLocalizations.of(context)!.playLeadTitle, "/"),
       body: FutureBuilder(
         future: result,
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
