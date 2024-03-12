@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:inciguesser_game/ui/home/widgets/home_footer.dart';
-import 'package:inciguesser_game/ui/play/play_viewmodel.dart';
-import 'package:inciguesser_game/ui/play/widgets/play_page_app_bar.dart';
-import 'package:inciguesser_game/ui/play/widgets/play_page_emoji_row.dart';
-import 'package:inciguesser_game/ui/play/widgets/play_page_fab.dart';
-import 'package:inciguesser_game/ui/play/widgets/play_page_text_constants.dart';
+import 'package:guess_the_event_emoji_edition/ui/common/custom_footer.dart';
+import 'package:guess_the_event_emoji_edition/ui/play/play_viewmodel.dart';
+import 'package:guess_the_event_emoji_edition/ui/play/widgets/play_page_app_bar.dart';
+import 'package:guess_the_event_emoji_edition/ui/play/widgets/play_page_emoji_row.dart';
+import 'package:guess_the_event_emoji_edition/ui/play/widgets/play_page_fab.dart';
+import 'package:guess_the_event_emoji_edition/ui/play/widgets/play_page_text_constants.dart';
 
 import 'widgets/play_page_options_button.dart';
 
@@ -29,7 +29,7 @@ class _PlayViewState extends State<PlayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: playPageAppBar(AppLocalizations.of(context)!.playLeadTitle),
+      appBar: playPageAppBar(context, AppLocalizations.of(context)!.playLeadTitle, "/"),
       body: FutureBuilder(
         future: result,
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
@@ -70,8 +70,8 @@ class _PlayViewState extends State<PlayView> {
           }
         }
       ),
-      floatingActionButton: playPageFAB(_refreshPage),
-      bottomNavigationBar: homeFooter(context),
+      floatingActionButton: playPageFAB(context, _refreshPage),
+      bottomNavigationBar: customFooter(context),
     );
   }
 }

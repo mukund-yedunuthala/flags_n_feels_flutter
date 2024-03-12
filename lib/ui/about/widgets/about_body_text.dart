@@ -4,6 +4,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 Text aboutBodyText(BuildContext context) {
   return Text(
       AppLocalizations.of(context)!.aboutPageText,
-      style: Theme.of(context).textTheme.bodyLarge,
+      style: Theme.of(context).textTheme.titleLarge,
   );
 }

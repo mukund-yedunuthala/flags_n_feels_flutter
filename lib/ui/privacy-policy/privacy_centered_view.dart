@@ -24,6 +24,6 @@ class PrivacyPolicyCenteredView extends StatelessWidget {
 Text policyBodyText(BuildContext context) {
   return Text(
       AppLocalizations.of(context)!.privacyPolicy,
-      style: Theme.of(context).textTheme.bodyLarge,
+      style: Theme.of(context).textTheme.titleLarge,
   );
 }

@@ -24,6 +24,6 @@ class ImprintCenteredView extends StatelessWidget {
 Text imprintBodyText(BuildContext context) {
   return Text(
       AppLocalizations.of(context)!.imprintText,
-      style: Theme.of(context).textTheme.bodyLarge,
+      style: Theme.of(context).textTheme.titleLarge,
   );
 }

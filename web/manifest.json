@@ -1,11 +1,11 @@
 {
-    "name": "inciguesser_game",
-    "short_name": "inciguesser_game",
+    "name": "Guess the Event: Emoji Edition",
+    "short_name": "Guess the Event",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "An interactive game where players are challenged to guess the historical event based on emoji representations.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

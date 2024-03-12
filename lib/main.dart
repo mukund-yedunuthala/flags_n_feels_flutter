@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:inciguesser_game/ui/about/about_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/about/about_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:inciguesser_game/ui/home/home_view.dart';
-import 'package:inciguesser_game/ui/imprint/imprint_view.dart';
-import 'package:inciguesser_game/ui/play/play_view.dart';
-import 'package:inciguesser_game/ui/privacy-policy/privacy_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/home/home_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/imprint/imprint_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/play/play_view.dart';
+import 'package:guess_the_event_emoji_edition/ui/privacy-policy/privacy_view.dart';
 Future<void> main() async{
   await dotenv.load(fileName: "keys.env");
   runApp(MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: "home",
         path: "/",
-        builder: (context, state) => const HomePageState(title: "Flags & Feels"),
+        builder: (context, state) => HomePageState(title: AppLocalizations.of(context)!.appName),
       ),
       GoRoute(
         name: "play",
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flags & Feels',
+      title: "Guess the Event: Emoji edition",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
