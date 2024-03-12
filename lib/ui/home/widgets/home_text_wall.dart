@@ -17,6 +17,6 @@ Widget homeLeadTitleText(BuildContext context) {
 Text homeBodyText(BuildContext context) {
   return Text(
       AppLocalizations.of(context)!.homePageText,
-      style: Theme.of(context).textTheme.bodyLarge,
+      style: Theme.of(context).textTheme.displaySmall,
   );
 }

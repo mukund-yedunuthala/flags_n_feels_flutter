@@ -8,5 +8,7 @@ PreferredSizeWidget customAppBar(BuildContext context, String leadTitle, String 
       icon: const Icon(Icons.arrow_back), onPressed: () {
         context.go(backPressRoute);
     },),
+    centerTitle: true,
+    titleTextStyle: Theme.of(context).textTheme.displaySmall,
   );
 }

@@ -15,10 +15,10 @@ class HomeCenteredView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 200),
-          homeLeadTitleText(context),
+          // homeLeadTitleText(context),
           const SizedBox(height: 50),
           homeBodyText(context),
-          const SizedBox(height: 150),
+          const SizedBox(height: 50),
           homeCallForAction(context)
         ],
       ),
