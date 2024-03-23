@@ -39,7 +39,7 @@ Widget customFooter(BuildContext context) {
 }
 
 _launchLicense() async {
-  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/flags_n_feels_flutter/src/branch/main/LICENSE");
+  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/guess_the_event_emoji_edition/src/branch/main/LICENSE");
   if (!await launchUrl(sourceUri)) {
     throw Exception('Could not launch $sourceUri');
   }

@@ -14,11 +14,12 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
       ),  
     ),
     actions: [
+      const SizedBox(width: 20),
       TextButton(
         onPressed: _launchSource, 
         child: Text(
           AppLocalizations.of(context)!.homeTopBarSource,
-          style: const TextStyle(fontSize: 20)
+          style: const TextStyle(fontSize: 15)
         )
         ),
       const SizedBox(width: 20),
@@ -26,7 +27,7 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
         onPressed: () => context.go("/about"), 
         child: Text(
           AppLocalizations.of(context)!.homeTopBarAbout,
-          style: const TextStyle(fontSize: 20)
+          style: const TextStyle(fontSize: 15)
         )
       ),
       const SizedBox(width: 40)
@@ -37,7 +38,7 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
 }
 
 _launchSource() async {
-  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/flags_n_feels_flutter");
+  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/guess_the_event_emoji_edition");
   if (!await launchUrl(sourceUri)) {
     throw Exception('Could not launch $sourceUri');
   }
