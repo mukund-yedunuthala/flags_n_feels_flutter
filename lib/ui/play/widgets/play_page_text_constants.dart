@@ -6,5 +6,6 @@ Text bodyTextRow(final String bodyText) {
               style: const TextStyle(
                 fontSize: 30,
               ),
+              textAlign: TextAlign.center,
             );
 }

@@ -8,7 +8,7 @@ class AboutCenteredView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 800,
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,

@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
-PreferredSizeWidget homeTopBar(String title, BuildContext context) {
+PreferredSizeWidget homeTopBarLarge(String title, BuildContext context) {
   return AppBar(
     title: Text(
       title,
@@ -14,11 +14,12 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
       ),  
     ),
     actions: [
+      const SizedBox(width: 20),
       TextButton(
         onPressed: _launchSource, 
         child: Text(
           AppLocalizations.of(context)!.homeTopBarSource,
-          style: const TextStyle(fontSize: 20)
+          style: const TextStyle(fontSize: 15)
         )
         ),
       const SizedBox(width: 20),
@@ -26,7 +27,7 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
         onPressed: () => context.go("/about"), 
         child: Text(
           AppLocalizations.of(context)!.homeTopBarAbout,
-          style: const TextStyle(fontSize: 20)
+          style: const TextStyle(fontSize: 15)
         )
       ),
       const SizedBox(width: 40)
@@ -36,8 +37,50 @@ PreferredSizeWidget homeTopBar(String title, BuildContext context) {
   );
 }
 
+Widget homeTopBarMobile(String title, BuildContext context) {
+  return Container(
+    height: 200,
+    child: Column(
+      children: [
+        const SizedBox(height: 20),
+        Center(
+          child:
+            Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600 
+                ),
+                textAlign: TextAlign.center,
+            )
+        ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TextButton(
+              onPressed: _launchSource, 
+              child: Text(
+                AppLocalizations.of(context)!.homeTopBarSource,
+                style: const TextStyle(fontSize: 15)
+              )
+            ),
+            TextButton(
+              onPressed: () => context.go("/about"), 
+              child: Text(
+              AppLocalizations.of(context)!.homeTopBarAbout,
+              style: const TextStyle(fontSize: 15)
+              )
+            ),
+          ],
+        )
+      ],
+    ),
+  );
+}
+
 _launchSource() async {
-  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/flags_n_feels_flutter");
+  final Uri sourceUri = Uri.parse("https://git.mukund-yedunuthala.de/mukund-yedunuthala/guess_the_event_emoji_edition");
   if (!await launchUrl(sourceUri)) {
     throw Exception('Could not launch $sourceUri');
   }

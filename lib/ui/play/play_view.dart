@@ -60,6 +60,7 @@ class _PlayViewState extends State<PlayView> {
                 children.add(const SizedBox(height: 20));
             }
             return Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               alignment: Alignment.center,
               child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
