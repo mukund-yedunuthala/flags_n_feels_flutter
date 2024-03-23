@@ -23,11 +23,11 @@ Text homeBodyTextLarge(BuildContext context) {
 
 Widget homeBodyTextMobile(BuildContext context) {
   return SizedBox(
-    width: 300,
+    width: 400,
     height: 100,
     child: Text(
       AppLocalizations.of(context)!.homePageText,
-      style: Theme.of(context).textTheme.titleLarge,
+      style: Theme.of(context).textTheme.headlineMedium,
       textAlign: TextAlign.center,
     ),
   );

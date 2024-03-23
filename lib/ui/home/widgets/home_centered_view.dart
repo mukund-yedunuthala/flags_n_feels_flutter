@@ -45,7 +45,7 @@ class HomeViewMobile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             homeTopBarMobile(title, context),
-            const SizedBox(height: 50),
+            const SizedBox(height: 150),
             homeBodyTextMobile(context),
             homeCallForActionMobile(context)
           ],

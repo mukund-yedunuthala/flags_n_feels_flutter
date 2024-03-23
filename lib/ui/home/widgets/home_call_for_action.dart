@@ -22,10 +22,10 @@ FilledButton homeCallForActionLarge(BuildContext context) {
 
 FilledButton homeCallForActionMobile(BuildContext context) {
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-        minimumSize: const Size(130, 40),
+        minimumSize: const Size(240, 60),
         padding: const EdgeInsets.symmetric(horizontal: 5),
         shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(15)),
     ),
   );
   return FilledButton(
@@ -33,7 +33,7 @@ FilledButton homeCallForActionMobile(BuildContext context) {
     onPressed: () => context.go("/play"),
     child: Text(
       AppLocalizations.of(context)!.homeCallForAction, 
-      style: const TextStyle(fontSize: 20),
+      style: const TextStyle(fontSize: 22),
     ),
   );
 }
