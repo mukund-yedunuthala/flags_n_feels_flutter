@@ -8,7 +8,7 @@ class PrivacyPolicyCenteredView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 800,
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,6 +24,7 @@ class PrivacyPolicyCenteredView extends StatelessWidget {
 Text policyBodyText(BuildContext context) {
   return Text(
       AppLocalizations.of(context)!.privacyPolicy,
-      style: Theme.of(context).textTheme.titleLarge,
+      style: Theme.of(context).textTheme.titleMedium,
+      textAlign: TextAlign.justify,
   );
 }

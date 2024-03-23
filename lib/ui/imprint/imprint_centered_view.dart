@@ -8,7 +8,7 @@ class ImprintCenteredView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 800,
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,6 +24,7 @@ class ImprintCenteredView extends StatelessWidget {
 Text imprintBodyText(BuildContext context) {
   return Text(
       AppLocalizations.of(context)!.imprintText,
-      style: Theme.of(context).textTheme.titleLarge,
+      style: Theme.of(context).textTheme.titleMedium,
+      textAlign: TextAlign.justify,
   );
 }

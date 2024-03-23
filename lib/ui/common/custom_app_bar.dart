@@ -9,6 +9,6 @@ PreferredSizeWidget customAppBar(BuildContext context, String leadTitle, String 
         context.go(backPressRoute);
     },),
     centerTitle: true,
-    titleTextStyle: Theme.of(context).textTheme.displaySmall,
+    titleTextStyle: Theme.of(context).textTheme.titleLarge,
   );
 }
